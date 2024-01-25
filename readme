@@ -1,1 +1,37 @@
-#Project CRUD moviest
+CRUD moviest
+
+Tecnologias/pacotes utilizados:
+
+PHP, HTML, CSS, MySQL, Xampp+Apache
+
+#Startar o projeto
+-Para startar o projeto é necessário: Ter o Xampp instalado, colocar o projeto dentro do HTDocs do xampp e iniciar o Apache, após iniciar o apache -> vá até o navegador e na url coloque a URL "localhost/nomeDaPastaDoProjeto/index.php"
+
+configurações de acesso ao db
+
+type: Tipo de base de dados que pode ser: mysql, postgres, cockroachdb, mariadb, sqlite, better-sqlite3, cordova, nativescript, oracle, mssql, mongodb, etc..;
+
+db_host: host do banco de dados;
+
+db_name: "moviestar";
+
+$db_user: "root";
+
+db_pass: "sua senha do banco de dados -se houver-";
+
+modelo da nossa tabela:
+#bd:
+CREATE DATABASE moviestar
+USE moviestar
+
+#table
+CREATE TABLE `users` (
+`id` int unsigned NOT NULL AUTO_INCREMENT,
+`name` varchar(100) DEFAULT NULL,
+`lastname` varchar(100) DEFAULT NULL,
+`email` varchar(200) DEFAULT NULL,
+`password` varchar(200) DEFAULT NULL,
+`token` varchar(200) DEFAULT NULL,
+`bio` text,
+PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
