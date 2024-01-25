@@ -58,4 +58,16 @@ if ($type === "register") {
 
   // Fazer o login do usuário
 } else if ($type === "login") {
+  $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+  $password = filter_input(INPUT_POST, "password");
+
+  //tentar autenticar user
+  if ($userDao->authenticateUser($email, $password)) {
+    $message->setMessage("Seja bem vindo", "error", "editprofile.php");
+    //redireciona o user, caso não consiga autenticar
+  } else {
+    $message->setMessage("User e/ou senhas incorretos", "error", "auth.php");
+  }
+} else {
+  $message->setMessage("Informações inválidas", "error", "auth.php");
 }
